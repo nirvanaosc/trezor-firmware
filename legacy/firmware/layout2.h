@@ -36,7 +36,8 @@ extern void *layoutLast;
 #if DEBUG_LINK
 #define layoutSwipe oledClear
 #else
-#define layoutSwipe oledSwipeLeft
+#define layoutSwipe oledClear
+//#define layoutSwipe oledSwipeLeft
 #endif
 
 void layoutDialogSwipe(const BITMAP *icon, const char *btnNo,
