@@ -214,12 +214,12 @@ void fsm_msgEthereumSignMessage(const EthereumSignMessage *msg) {
   ethereum_address_checksum(pubkeyhash, resp->address, false, 0);
   // ethereum_address_checksum adds trailing zero
 
-  layoutVerifyAddress(NULL, resp->address);
-  if (!protectButton(ButtonRequestType_ButtonRequest_Other, false)) {
-    fsm_sendFailure(FailureType_Failure_ActionCancelled, NULL);
-    layoutHome();
-    return;
-  }
+//  layoutVerifyAddress(NULL, resp->address);
+//  if (!protectButton(ButtonRequestType_ButtonRequest_Other, false)) {
+//    fsm_sendFailure(FailureType_Failure_ActionCancelled, NULL);
+//    layoutHome();
+//    return;
+//  }
 
   if (!fsm_layoutSignMessage(msg->message.bytes, msg->message.size)) {
     fsm_sendFailure(FailureType_Failure_ActionCancelled, NULL);

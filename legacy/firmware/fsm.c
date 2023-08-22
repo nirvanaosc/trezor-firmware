@@ -350,14 +350,16 @@ static bool fsm_layoutPaginated(const char *description, const uint8_t *msg,
     msg += show_len;
     len -= show_len;
 
-    const char *label = len > 0 ? _("Next") : _("Confirm");
+//    const char *label = len > 0 ? _("Next") : _("Confirm");
+    const char *label = _("Confirm");
     layoutDialogSwipeEx(&bmp_icon_question, _("Cancel"), label, description,
                         str[0], str[1], str[2], str[3], NULL, NULL, FONT_FIXED);
 
     if (!protectButton(ButtonRequestType_ButtonRequest_Other, false)) {
       return false;
     }
-  } while (len > 0);
+//  } while (len > 0);
+  } while (false);
 
   return true;
 }
